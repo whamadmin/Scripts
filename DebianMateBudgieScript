@@ -1,0 +1,115 @@
+#!/bin/bash
+### My Post Install Install #!++ Script###
+
+###Install GTK Themes and Icons###
+# My Yaru Install Script
+  # Gnone Shell
+sudo apt install yaru-theme-gnome-shell
+  # GTK Theme
+sudo apt install yaru-theme-gtk
+  # Icon Theme
+sudo apt install yaru-theme-icon
+  # Sound
+sudo apt install yaru-theme-sound
+
+# How to apply system theme to flatpak apps that use GTK4
+sudo flatpak install org.gtk.Gtk3theme.Adwaita-dark -y
+sudo flatpak override --filesystem=/usr/share/themes/ 
+sudo flatpak override --env GTK_THEME=Adwaita-dark
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+
+sudo apt install papirus-icon-theme -y
+sudo apt install arc-theme -y
+sudo apt install numix-gtk-theme -y
+sudo apt install numix-gtk-theme-circle -y
+sudo apt install greybird-gtk-theme
+sudo apt install materia-gtk-theme
+sudo apt install sugar-icon-theme -y
+sudo apt install numix-icon-theme -y
+sudo apt install orchis-gtk-theme -y
+
+# My Budgie Install Script
+sudo apt install budgie-desktop -y
+sudo apt install budgie-previews -y
+sudo apt install budgie-weathershow-applet -y
+sudo apt install budgie-app-launcher-applet -y
+sudo apt install budgie-applications-menu-applet -y
+
+### Install Gnome Software, Flatpak & Flathub repository###
+sudo apt install flatpak
+sudo apt install gnome-software -y
+sudo apt install gnome-software-plugin-flatpak -y
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+### Caja Extensions
+sudo apt install caja-admin -y
+sudo apt install caja-extensions-common -y
+sudo apt install caja-image-converter -y
+sudo apt install caja-open-terminal -y
+sudo apt install caja-wallpaper -y
+
+###Plank Dock###
+sudo apt install plank -y
+
+sudo apt install lightdm-gtk-greeter-settings -y
+
+
+####Debian Applications###
+sudo apt install mate-tweak -y
+sudo apt install menulibre -y
+sudo apt install neofetch -y
+sudo apt install telegram-desktop -y
+sudo apt install gimp -y
+sudo apt install inkscape -y
+sudo apt install telegram-desktop -y
+sudo apt install audacity -y
+sudo apt install celluloid -y
+sudo apt install cheese -y
+sudo apt install handbrake -y
+sudo apt install mixxx -y
+sudo apt install obs-studio -y
+sudo apt install opensssh-server -y
+sudo apt install youtube-dl -y
+sudo apt install simplescreenrecorder -y
+sudo apt install gnome-sound-recorder -y
+sudo apt install vlc -y
+sudo apt install blender -y
+sudo apt install arduino -y
+sudo apt install scribus -y
+sudo apt install filezilla -y
+sudo apt install hexchat -y
+sudo apt install mumble -y
+sudo apt install polari -y
+sudo apt install remmina -y
+sudo apt install sparkleshare -y
+sudo apt install syncthing-gtk -y
+sudo apt install transmission -y
+sudo apt install wireshark -y
+sudo apt install calibre -y
+sudo apt install ghostwriter -y
+sudo apt install evolution -y
+sudo apt install clamtk -y
+sudo apt install deja-dup -y
+sudo apt install zim -y
+sudo apt install shotcut -y
+
+# Flatpaks
+flatpak install flathub org.kde.kdenlive -y
+flatpak install flathub com.github.calo001.fondo -y
+latpak install flathub org.kde.krita -y
+flatpak install flathub com.adobe.Flash-Player-Projector -y
+flatpak install flathub com.github.robertsanseries.ciano -y
+flatpak install flathub com.github.unrud.VideoDownloader -y
+flatpak install flathub org.gabmus.whatip -y
+flatpak install flathub us.zoom.Zoom -y
+flatpak install flathub net.runelite.RuneLite -y
+flatpak install flathub com.bitwarden.desktop -y
+flatpak install flathub com.github.miguelmota.Cointop -y
+flatpak install flathub com.spotify.Client -y
+flatpak install flathub md.obsidian.Obsidian -y
+flatpak install flathub com.prusa3d.PrusaSlicer -y
+flatpak install flathub org.onlyoffice.desktopeditors -y
+flatpak install flathub net.cozic.joplin_desktop -y
+flatpak install flathub org.ferdium.Ferdium -y
+
+

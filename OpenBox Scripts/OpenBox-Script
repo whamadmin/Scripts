@@ -1,0 +1,23 @@
+#!/bin/bash
+# My Post Install Script (Debian Testing/Sid Install Script)
+
+sudo apt update
+sudo apt upgrade -y
+sudo apt install flatpak -y
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+#F###Install GTK Themes and Icons###
+
+sudo apt install papirus-icon-theme -y
+sudo apt install neofetch -y
+sudo apt install menulibre -y
+sudo apt install arc-theme -y
+sudo apt install adapta-gtk-theme -y
+sudo apt install numix-gtk-theme -y
+sudo apt install numix-gtk-theme-circle -y
+sudo apt install greybird-gtk-theme
+sudo apt install materia-gtk-theme
+sudo apt install sugar-icon-theme -y
+sudo apt install numix-icon-theme -yor KDE
+
+

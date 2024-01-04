@@ -1,0 +1,14 @@
+#!/bin/bash
+# My Yaru Install Script
+
+# Gnone Shell
+sudo apt install yaru-theme-gnome-shell
+
+# GTK Theme
+sudo apt install yaru-theme-gtk
+
+# Icon Theme
+sudo apt install yaru-theme-icon
+
+# Sound
+sudo apt install yaru-theme-sound
