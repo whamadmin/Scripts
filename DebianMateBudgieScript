@@ -2,14 +2,9 @@
 ### My Post Install Install #!++ Script###
 
 ###Install GTK Themes and Icons###
-# My Yaru Install Script
-  # Gnone Shell
-sudo apt install yaru-theme-gnome-shell
-  # GTK Theme
+### My Yaru Install Script
 sudo apt install yaru-theme-gtk
-  # Icon Theme
 sudo apt install yaru-theme-icon
-  # Sound
 sudo apt install yaru-theme-sound
 
 # How to apply system theme to flatpak apps that use GTK4
