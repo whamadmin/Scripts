@@ -4,6 +4,11 @@
 #Flathub Repository
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+sudo flatpak install org.gtk.Gtk3theme.Adwaita-dark -y
+sudo flatpak override --filesystem=/usr/share/themes/ 
+sudo flatpak override --env GTK_THEME=Adwaita-dark
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+
 flatpak install flathub com.bitwarden.desktop -y
 flatpak install flathub com.spotify.Client -y
 flatpak install flathub org.gimp.GIMP -y
