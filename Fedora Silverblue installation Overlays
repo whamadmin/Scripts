@@ -1,0 +1,19 @@
+# Fedora Silverblue installation Overlays
+
+### Yaru-Theme
+sudo rpm-ostree install yaru-theme distrobox
+
+### 
+
+### Virtualization with virtual Machine Manager
+
+sudo rpm-ostree install virt-install libvirt-daemon libvirt-daemon-config-network libvirt-daemon-kvm qemu-kvm virt-manager virt-viewer libvirt-daemon-driver-interface libvirt-daemon-driver-network libvirt-daemon-driver-nwfilter libvirt-daemon-driver-qemu libvirt-daemon-driver-secret libvirt-daemon-driver-storage-core guestfs-tools python3-libguestfs virt-top
+
+#### Before using virtual machine manager do this in a terminal
+#### systemctl status libvirtd
+#### systemctl enable libvirtd
+#### systemctl start libvirtd
+#### systemctl status libvirtd
+
+
+
