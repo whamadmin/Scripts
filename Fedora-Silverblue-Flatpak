@@ -108,3 +108,7 @@ flatpak install flathub net.mkiol.SpeechNote -y
 flatpak install flathub io.gitlab.persiangolf.voicegen -y
 flatpak install flathub ch.openboard.OpenBoard -y
 flatpak install flathub io.github.dvlv.boxbuddyrs
+flatpak install flathub com.github.tchx84.Flatseal
+flatpak install flathub io.github.giantpinkrobots.flatsweep
+flatpak install flathub org.flatpak.qtdemo
+
