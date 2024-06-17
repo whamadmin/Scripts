@@ -98,3 +98,4 @@ flatpak install flathub net.codelogistics.webapps -y
 flatpak install flathub net.codelogistics.clicker -y
 flatpak install flathub org.chromium.Chromium -y
 flatpak install flathub org.gnome.meld -y
+flatpak install flathub org.kde.skrooge -y
