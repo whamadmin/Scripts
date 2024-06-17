@@ -94,7 +94,6 @@ flatpak install flathub com.notesnook.Notesnook -y
 flatpak install flathub dev.pulsar_edit.Pulsar -y
 flatpak install flathub org.kde.kdevelop -y
 flatpak install flathub org.kde.kdiff3 -y
-flatpak install flathub net.codelogistics.webapps -y
 flatpak install flathub net.codelogistics.clicker -y
 flatpak install flathub org.chromium.Chromium -y
 flatpak install flathub org.gnome.meld -y
