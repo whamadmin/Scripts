@@ -1,7 +1,7 @@
 # How to apply system theme to flatpak apps that use GTK4
 
 sudo flatpak install org.gtk.Gtk3theme.Adwaita-dark -y
-sudo flatpak override --filesystem=/usr/share/themes/ 
+sudo flatpak override --filesystem=/usr/share/themes/
 sudo flatpak override --env GTK_THEME=Adwaita-dark
 
 # Yaru Theme
