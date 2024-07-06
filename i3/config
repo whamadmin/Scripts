@@ -140,7 +140,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -364,7 +364,7 @@ exec pcmanfm
 
 #filemanager focus
 for_window [class="Nemo"] focus
-for_window [class="Nautilus"] focus
+for_window [class="pcmanfm"] focus
 for_window [class="Caja"] focus
 for_window [class="Thunar"] focus
 
@@ -381,22 +381,7 @@ bindsym control+mod1+b exec nemo --no-desktop;workspace 8;focus
 
 # USER APPLICATIONS TO START AT BOOT
 
-#sublime-text
-#exec subl
-exec subl3
-
-#Authentication dialog
-
-#arch budgie
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
-#Linux Mint
-#exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
-
 # update
-
-#Linux Mint
-#exec mintupdate-launcher
 
 # Arch
 exec pamac-tray
@@ -410,4 +395,4 @@ exec blueberry-tray
 exec --no-startup-id nm-applet
 
 #install this program for applet
-#exec network-manager-applet
+exec network-manager-applet
