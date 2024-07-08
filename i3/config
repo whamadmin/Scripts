@@ -54,7 +54,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy --nofork
 
 ################### i3lock-fancy #########################
 bindsym $mod+l exec --no-startup-id i3lock-fancy
@@ -229,12 +229,7 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
@@ -256,54 +251,71 @@ bar {
 
 
 ################### ASSIGN ######################
-
 # Assign application to start on a specific workspace
 # you can find the class with the program xprop
 
-assign [class="Navigator|firefox"]                                        		→ 1
-assign [class="google-chrome|Google-chrome"]                                    → 1
+assign [class="firefox|google-chrome|Google-chrome"]                            → 1
 assign [class="lxterminal|Lxterminal"]       									→ 2
-# assign [class="Xed|xed|Brackets|Atom|Code"]                                   → 2
-# assign [class="Inkscape"]                                                     → 3
 
 
-# assign [class="crx_mjoklplbddabcmpepnokjaffbmgbkkgg|Google-chrome"]				→ 4
-# assign [class="Meld"]                                                         → 5
-# assign [class="feh|gthumb|Gthumb|eog|Eog|Pinta|pixeluvo|Pixeluvo"]            → 5
-assign [class="ferdium|Ferdium"]                      							→ 6
-# assign [class="Vlc|vlc"]                                                      → 6
-# assign [class="Vmplayer|VirtualBox"]                                          → 7
-# assign [class="Nemo|Thunar|Caja|nautilus|Nautilus"]                           → 8
+
+
+
+assign [class="ferdium|Ferdium"]                                                → 6
+assign [class="mousepad|Mousepad"]                                              → 7
+assign [class="Nemo|Thunar|Caja|pcmanfm|Pcmanfm"]                               → 8
 # assign [class="Geary|Evolution"]                                              → 9
 # assign [class="Spotify|spotify"]                                              → 10
   #fix for spotify not moving to workspace 10
   #for_window [class="Spotify"] move to workspace 10
 
+################### WORKSPACES SHORTCUTS ######################
+# next/previous workspace
+
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
+bindsym $mod+Tab workspace back_and_forth
+
+#navigate workspaces next / previous
+bindsym Mod1+Ctrl+Right workspace next
+bindsym Mod1+Ctrl+Left workspace prev
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
 
 ################### SHORTCUTS APPLICATIONS ######################
 
 #workspace 1 related
-bindsym $mod+Shift+f exec firefox;workspace 1;focus
-bindsym $mod+Shift+b exec google-chrome;workspace 1;focus
-# bindsym control+mod1+f exec firefox;workspace 1; focus
-# bindsym control+mod1+v exec vivaldi-stable;workspace 1; focus
-
-#workspace 2 related
 bindsym $mod+Return exec lxterminal;workspace 2;focus
 
+#workspace 2 related
+bindsym $mod+Shift+b exec firefox;workspace 1;focus
+bindsym $mod+Shift+g exec google-chrome;workspace 1;focus
 
+#workspace 3 related
 
 #workspace 4 related
-#bindsym $mod+Shift+g exec GitHub;workspace 4;focus
 
-
-
-
+#workspace 5 related
 
 #workspace 6 related
 bindsym $mod+Shift+o exec ferdium;workspace 6;focus
 
+#workspace 7 related
 
+#workspace 8 related
+bindsym $mod+Shift+Return exec pcmanfm|Pcmanfm;workspace 8;focus
+
+#workspace 9 related
+
+#workspace 10 related
+
+################### SCREENSHOTS ######################
+#bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
+#bindsym Print exec scrot '%Y-%m-%d-%H-%M-%S.jpg' -e 'mv $f ~/Pictures/' && sleep 1 && exec notify-send 'screenshot has been saved in ~/Pictures'
+#bindsym Control+Print exec gnome-screenshot -i
+#bindsym shift+Print exec shutter
+bindsym Print exec xfce4-screenshooter
 
 
 ###########################################################################
@@ -334,7 +346,7 @@ bindsym $mod+Shift+o exec ferdium;workspace 6;focus
 #System monitor
 #bindsym control+Shift+Escape exec gnome-system-monitor;focus
 #bindsym control+Shift+Escape exec mate-system-monitor;focus
-#bindsym control+Shift+Escape exec xfce4-taskmanager;focus
+bindsym control+Shift+Escape exec xfce4-taskmanager;focus
 
 #settings
 #bindsym control+mod1+n exec cinnamon-settings
@@ -359,40 +371,29 @@ bindsym control+mod1+n exec xfce4-settings-manager
 
 # exec nemo --no-desktop
 #exec nautilus --no-desktop
-exec pcmanfm
+#exec pcmanfm
 #exec thunar
 
 #filemanager focus
 for_window [class="Nemo"] focus
-for_window [class="pcmanfm"] focus
+for_window [class="pcmanfm|Pcmanfm"] focus
 for_window [class="Caja"] focus
 for_window [class="Thunar"] focus
 
-bindsym $mod+Shift+Return exec nemo --no-desktop; workspace 8;focus
+#bindsym $mod+Shift+Return exec nemo --no-desktop; workspace 8;focus
 #bindsym $mod+Shift+Return exec nautilus --no-desktop; workspace 8;focus
 #bindsym $mod+Shift+Return exec caja; workspace 8;focus
 #bindsym $mod+Shift+Return exec thunar; workspace 8;focus
+#bindsym $mod+Shift+Return exec pcmanfm|Pcmanfm; workspace 8;focus
 
-bindsym control+mod1+b exec nemo --no-desktop;workspace 8;focus
-#bindsym control+mod1+b exec nautilus --no-desktop;workspace 8;focus
-#bindsym control+mod1+b exec caja;workspace 8;focus
-#bindsym control+mod1+b exec thunar;workspace 8;focus
-
-
+#####################################################################
 # USER APPLICATIONS TO START AT BOOT
-
-# update
-
-# Arch
-exec pamac-tray
-
-# bluetooth
+#####################################################################
+### bluetooth ###
 exec blueberry-tray
 #exec --no-startup-id blueman-applet
 
-# network
-#antergos
-exec --no-startup-id nm-applet
-
-#install this program for applet
+### network ###
+exec --no-startup-id nm-applet ###
+##install this program for applet
 exec network-manager-applet
