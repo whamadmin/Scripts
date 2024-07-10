@@ -259,15 +259,11 @@ assign [class="lxterminal|Lxterminal"]       									→ 2
 
 
 
-
-
 assign [class="ferdium|Ferdium"]                                                → 6
 assign [class="mousepad|Mousepad"]                                              → 7
 assign [class="Nemo|Thunar|Caja|pcmanfm|Pcmanfm"]                               → 8
 # assign [class="Geary|Evolution"]                                              → 9
-# assign [class="Spotify|spotify"]                                              → 10
-  #fix for spotify not moving to workspace 10
-  #for_window [class="Spotify"] move to workspace 10
+assign [class="rustdesk|Rustdesk|virt-manager|Virt-manager"]                    → 10
 
 ################### WORKSPACES SHORTCUTS ######################
 # next/previous workspace
@@ -304,11 +300,13 @@ bindsym $mod+Shift+o exec ferdium;workspace 6;focus
 #workspace 7 related
 
 #workspace 8 related
-bindsym $mod+Shift+Return exec pcmanfm|Pcmanfm;workspace 8;focus
+bindsym $mod+Shift+Return exec pcmanfm;workspace 8;focus
 
 #workspace 9 related
 
 #workspace 10 related
+bindsym Control+Shift+v exec rustdesk;workspace 10;focus
+bindsym $mod+Shift+v exec virt-manager;workspace 10;focus
 
 ################### SCREENSHOTS ######################
 #bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
