@@ -255,16 +255,15 @@ bar {
 # you can find the class with the program xprop
 
 assign [class="firefox|google-chrome|Google-chrome"]                            → 1
-assign [class="lxterminal|Lxterminal"]       									→ 2
+assign [class="Nemo|Thunar|Caja|pcmanfm|Pcmanfm"]                               → 2
 assign [class="discord|discord"]		       									→ 3
 
-
+assign [class="lxterminal|Lxterminal"]       									→ 5
 assign [class="ferdium|Ferdium"]                                                → 6
 assign [class="mousepad|Mousepad"]                                              → 7
-assign [class="Nemo|Thunar|Caja|pcmanfm|Pcmanfm"]                               → 7
 assign [class="kdenlive|kdenlive"]												→ 8
 assign [class="zoom.real|zoom"]	                                            	→ 9
-assign [class="rustdesk|Rustdesk|virt-manager|Virt-manager"]                    → 10
+assign [class="rustdesk|Rustdesk|virt-manager|Virt-manager|org.remmina.Remmina|org.remmina.Remmina"]                    → 10
 
 ################### WORKSPACES SHORTCUTS ######################
 # next/previous workspace
@@ -283,39 +282,42 @@ for_window [urgent=latest] focus
 ################### SHORTCUTS APPLICATIONS ######################
 
 #workspace 1 related
-bindsym $mod+Return exec lxterminal;workspace 2;focus
-
-#workspace 2 related
 bindsym $mod+Shift+b exec firefox;workspace 1;focus
 bindsym $mod+Shift+g exec google-chrome;workspace 1;focus
 for_window [class="firefox"] focus
 for_window [class="google-chrome|Google-chrome"] focus
+
+#workspace 2 related
+bindsym $mod+Shift+Return exec pcmanfm;workspace 2;focus
 
 #workspace 3 related
 for_window [class="discord|discord"] focus
 
 #workspace 4 related
 
+
 #workspace 5 related
+bindsym $mod+Return exec lxterminal;workspace 5;focus
 
 #workspace 6 related
 bindsym $mod+Shift+o exec ferdium;workspace 6;focus
-for_window [class="bitwarden|Bitwarden"] focus
+for_window [class="bitwarden|Bitwarden"] 6;focus
 
 #workspace 7 related
-for_window [class="mousepad|Mousepad"] focus
-bindsym $mod+Shift+Return exec pcmanfm;workspace 7;focus
+for_window [class="mousepad|Mousepad"] 7;focus
+
 
 #workspace 8 related
-for_window [class="kdenlive|kdenlive"] focus
+for_window [class="kdenlive|kdenlive"] 8;focus
 
 #workspace 9 related
-for_window [class="zoom.real|zoom"] focus
+for_window [class="zoom.real|zoom"] 9;focus
 
 #workspace 10 related
 # bindsym Control+Shift+v exec rustdesk;workspace 10;focus
 # bindsym $mod+Shift+v exec virt-manager;workspace 10;focus
 for_window [class="virt-manager|Virt-manager"] focus
+for_window [class="org.remmina.Remmina"] 10;focus
 
 ################### SCREENSHOTS ######################
 #bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
@@ -362,18 +364,6 @@ bindsym control+Shift+Escape exec xfce4-taskmanager;focus
 bindsym control+mod1+n exec xfce4-settings-manager
 
 
-#workspace 2 related
-#bindsym $mod+F2 exec subl;workspace 2;focus
-#bindsym control+mod1+w exec subl;workspace 2;focus
-#bindsym $mod+F2 exec subl3;workspace 2;focus
-#bindsym control+mod1+w exec subl3;workspace 2;focus
-
-#workspace 8 related
-#bindsym $mod+F8 exec nemo --no-desktop;workspace 8;focus
-#bindsym $mod+F8 exec nautilus --no-desktop;workspace 8;focus
-#bindsym $mod+F8 exec caja;workspace 8;focus
-#bindsym $mod+F8 exec thunar;workspace 8;focus
-
 #file managers
 
 # exec nemo --no-desktop
@@ -383,7 +373,6 @@ bindsym control+mod1+n exec xfce4-settings-manager
 
 #filemanager focus
 for_window [class="Nemo"] focus
-for_window [class="pcmanfm|Pcmanfm"] focus
 for_window [class="Caja"] focus
 for_window [class="Thunar"] focus
 
@@ -398,9 +387,13 @@ for_window [class="Thunar"] focus
 #####################################################################
 ### bluetooth ###
 exec blueberry-tray
-#exec --no-startup-id blueman-applet
+exec --no-startup-id blueman-applet
 
 ### network ###
 exec --no-startup-id nm-applet ###
 ##install this program for applet
 exec network-manager-applet
+
+### Discord ###
+exec discord
+
