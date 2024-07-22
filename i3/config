@@ -73,8 +73,8 @@ exec --no-startup-id lxpolkit
 ################### PulseAudio #########################
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -260,7 +260,7 @@ assign [class="discord|discord"]		       									→ 3
 
 assign [class="lxterminal|Lxterminal"]       									→ 5
 assign [class="ferdium|Ferdium"]                                                → 6
-assign [class="mousepad|Mousepad"]                                              → 7
+assign [class="mousepad|Mousepad|joplin|Joplin"]                                              → 7
 assign [class="kdenlive|kdenlive"]												→ 8
 assign [class="zoom.real|zoom"]	                                            	→ 9
 assign [class="rustdesk|Rustdesk|virt-manager|Virt-manager|org.remmina.Remmina|org.remmina.Remmina"]                    → 10
@@ -301,11 +301,10 @@ bindsym $mod+Return exec lxterminal;workspace 5;focus
 
 #workspace 6 related
 bindsym $mod+Shift+o exec ferdium;workspace 6;focus
-for_window [class="bitwarden|Bitwarden"] 6;focus
+for_window [class="bitwarden|Bitwarden"] ;focus
 
 #workspace 7 related
-for_window [class="mousepad|Mousepad"] 7;focus
-
+for_window [class="mousepad|Mousepad|joplin|Joplin"] 7;focus
 
 #workspace 8 related
 for_window [class="kdenlive|kdenlive"] 8;focus
@@ -326,6 +325,10 @@ for_window [class="org.remmina.Remmina"] 10;focus
 #bindsym shift+Print exec shutter
 bindsym Print exec xfce4-screenshooter
 
+###########################################################################
+##################### Floating Window Apps ################################
+###########################################################################
+for_window [class="bitwarden|Bitwarden"] floating enable
 
 ###########################################################################
 ###################       C O M P T O N      ##############################
