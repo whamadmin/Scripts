@@ -329,6 +329,7 @@ bindsym Print exec xfce4-screenshooter
 ##################### Floating Window Apps ################################
 ###########################################################################
 for_window [class="bitwarden|Bitwarden"] floating enable
+for_window [class="vlc|vlc"] floating enable
 
 ###########################################################################
 ###################       C O M P T O N      ##############################
